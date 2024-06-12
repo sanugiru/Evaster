@@ -34,19 +34,19 @@ namespace FernandoOleaDev.FyreSystem {
 
         [Header("Burnable Values")]
         [Tooltip("The object ignites when the game starts")]
-        [SerializeField] private bool igniteAtStart;
+        public bool igniteAtStart;
         [Tooltip("The object has infinite combustion")]
         [SerializeField] private bool infiniteCombustion;
         [Tooltip("Duration in seconds to propage flame over the whole object")]
-        [SerializeField] private float flamePropagationSeconds = 5.0f;
+        public float flamePropagationSeconds = 10.0f;
         [Tooltip("Value to adjust propagation around the whole object")]
         [SerializeField] private float propagationSmooth = 4.0f;
         [Tooltip("Duration in seconds that object is burning")]
-        [SerializeField] private float combustionSeconds = 10.0f;
+        public float combustionSeconds = 10.0f;
         [Tooltip("Combustion's percent when it shows burn signs")]
         [Range(0,1)] [SerializeField] private float combustionsSignsAtCombustionPercent = 0.8f;
         [Tooltip("Duration in seconds to cool down object")]
-        [SerializeField] private float coolingSeconds = 3.0f;
+        public float coolingSeconds = 3.0f;
         [Tooltip("Curve used to describe cooling")]
         [SerializeField] private AnimationCurve coolingCurve = new AnimationCurve();
 
@@ -95,7 +95,7 @@ namespace FernandoOleaDev.FyreSystem {
 
         [Header("Light")]
         [Tooltip("Generate light")]
-        [SerializeField] private bool generateLight = true;
+        public bool generateLight = true;
         [Tooltip("Max intensity of the light")]
         [SerializeField] private float maxLightIntensity = 10.0f;
         [Tooltip("Light intensity exponential increase value")]
