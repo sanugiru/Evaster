@@ -1273,6 +1273,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
         type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1962050576}
+    - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 1312664252}
+    - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
       propertyPath: playerLeftHandCollider
       value: 
       objectReference: {fileID: 915308963}
@@ -9771,6 +9781,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2048480925}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1312664251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312664252}
+  m_Layer: 0
+  m_Name: Teleport Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1312664252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312664251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.2872, y: 0.897, z: -15.568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1315501305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4776074465242192, guid: 003f91c8f9aa7d84fa7a00b552f9144a,
@@ -15161,6 +15202,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
         type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1962050576}
+    - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 1312664252}
+    - target: {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
       propertyPath: playerLeftHandCollider
       value: 
       objectReference: {fileID: 915308963}
@@ -15185,3 +15236,4 @@ SceneRoots:
   - {fileID: 1609659323}
   - {fileID: 1920597770}
   - {fileID: 246896494}
+  - {fileID: 1312664252}
