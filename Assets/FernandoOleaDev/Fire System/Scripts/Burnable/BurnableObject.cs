@@ -79,6 +79,7 @@ namespace FernandoOleaDev.FyreSystem {
         
         private GameObject particleFireGameobject;
         private List<ParticleSystem> particleSystems = new List<ParticleSystem>();
+        private AudioSource particleAudioSource;
         private Material material;
         private GameObject particleAshesGameobject;
         private ParticleSystem ashesParticleSystem;
@@ -141,6 +142,7 @@ namespace FernandoOleaDev.FyreSystem {
             InitIgniteArea();
             if (infiniteCombustion) {
                 combustionSeconds = Mathf.Infinity;
+                //combustionPercent = 0;
             }
             if (igniteAtStart) {
                 Ignite(transform.position);
@@ -192,6 +194,7 @@ namespace FernandoOleaDev.FyreSystem {
         }
 
         public void Ignite(Vector3 ignitePosition) {
+            Debug.Log(ignitePosition);
             if (burning || burnedUp) {
                 return;
             }
@@ -202,8 +205,24 @@ namespace FernandoOleaDev.FyreSystem {
                 GenerateLight();
             }
             burning = true;
-            igniteAreaController.OnIgniteCheck();
+            Debug.Log("sebelum 208");
+           // igniteAreaController.OnIgniteCheck();
+            Debug.Log("setelah 208");
             OnBurnableIgnited.Invoke();
+        }
+
+        public void FirstIgnition()
+        {
+            Debug.Log(transform.position);
+            Ignite(transform.position);
+            Debug.Log(transform.position);
+        }
+
+        public void Extinguish()
+        {
+            if (combustionPercent > 1) return;
+            combustionPercent += 0.09f;
+            Debug.Log(combustionPercent);
         }
 
         private void SetIgnitePosition() {
@@ -238,8 +257,9 @@ namespace FernandoOleaDev.FyreSystem {
             if (burnedUp && !cold) {
                 elapsedSecondsColling += Time.deltaTime;
             }
-            flamePropagationPercent = elapsedSecondsFlamePropagation / flamePropagationSeconds;
-            combustionPercent = elapsedSecondsCombustionSeconds / combustionSeconds;
+            flamePropagationPercent = elapsedSecondsFlamePropagation / flamePropagationSeconds;           
+            //combustionPercent = elapsedSecondsCombustionSeconds / combustionSeconds;
+            //Debug.Log("combustionPercent: " + combustionPercent);
             coolingPercent = elapsedSecondsColling / coolingSeconds;
             SetBurn();
             CheckPercents();
@@ -252,7 +272,7 @@ namespace FernandoOleaDev.FyreSystem {
             if (flamePropagationPercent >= 1) {
                 propagationFnished = true;
             }
-            if (combustionPercent >= 1) {
+            if (combustionPercent >= particlesOffCombustionPercent) {
                 burning = false;
                 burnedUp = true;
                 OnBurnableBurnedUp.Invoke();
@@ -347,6 +367,7 @@ namespace FernandoOleaDev.FyreSystem {
                 particleFireGameobject = Instantiate(particlesFirePrefab, transform);
                 particleFireGameobject.transform.position = transform.position;
                 particleSystems = particleFireGameobject.GetComponentsInChildren<ParticleSystem>().ToList();
+                particleAudioSource = particleFireGameobject.GetComponent<AudioSource>();
                 particleSystems.ForEach(particleSystem => {
                     ParticleSystem.ShapeModule shapeModule = particleSystem.shape;
                     shapeModule.shapeType = ParticleSystemShapeType.MeshRenderer;
@@ -369,6 +390,7 @@ namespace FernandoOleaDev.FyreSystem {
             particleSystems.ForEach(particleSystem => {
                 particleSystem.Play();
             });
+            //particleAudioSource.Play();
             particlesOn = true;
         }
         
@@ -376,6 +398,7 @@ namespace FernandoOleaDev.FyreSystem {
             particleSystems.ForEach(particleSystem => {
                 particleSystem.Stop();
             });
+            particleAudioSource.Stop();
         }
         
         private void ParticlesAshesOn() {
@@ -456,34 +479,34 @@ namespace FernandoOleaDev.FyreSystem {
             CheckMaterial();
         }
 
-        public override void OnInspectorGUI() {
-            DrawDefaultInspector();
+        //public override void OnInspectorGUI() {
+        //    DrawDefaultInspector();
 
-            if (!correctMaterial) {
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Material shader incorrect or default material",new GUIStyle(EditorStyles.textField) {normal = new GUIStyleState() {textColor = Color.red}});
-                if (GUILayout.Button("Set Correct Shader")) {
-                    myTarget.GenerateMaterial(burnShader);
-                    CheckMaterial();
-                }
-                if (GUILayout.Button("Set Correct Shader URP")) {
-                    myTarget.GenerateMaterial(burnShaderURP);
-                    CheckMaterial();
-                }
-                if (GUILayout.Button("Set Correct Shader HDRP")) {
-                    myTarget.GenerateMaterial(burnShaderHDRP);
-                    CheckMaterial();
-                }
-                EditorGUILayout.EndHorizontal();
-            }
-            if (GUILayout.Button("Ignite")) {
-                myTarget.Ignite(myTarget.transform.position);
-                CheckMaterial();
-            }
-            if (!myTarget.IsBurning()) {
-                material.SetVector("_IgnitePosition", myTarget.transform.position);
-            }
-        }
+        //    if (!correctMaterial) {
+        //        EditorGUILayout.BeginHorizontal();
+        //        EditorGUILayout.LabelField("Material shader incorrect or default material",new GUIStyle(EditorStyles.textField) {normal = new GUIStyleState() {textColor = Color.red}});
+        //        if (GUILayout.Button("Set Correct Shader")) {
+        //            myTarget.GenerateMaterial(burnShader);
+        //            CheckMaterial();
+        //        }
+        //        if (GUILayout.Button("Set Correct Shader URP")) {
+        //            myTarget.GenerateMaterial(burnShaderURP);
+        //            CheckMaterial();
+        //        }
+        //        if (GUILayout.Button("Set Correct Shader HDRP")) {
+        //            myTarget.GenerateMaterial(burnShaderHDRP);
+        //            CheckMaterial();
+        //        }
+        //        EditorGUILayout.EndHorizontal();
+        //    }
+        //    if (GUILayout.Button("Ignite")) {
+        //        myTarget.Ignite(myTarget.transform.position);
+        //        CheckMaterial();
+        //    }
+        //    if (!myTarget.IsBurning()) {
+        //        material.SetVector("_IgnitePosition", myTarget.transform.position);
+        //    }
+        //}
 
         private void CheckMaterial() {
             burnShader = Shader.Find("FernandoOleaDev/BurnShader");

@@ -21,7 +21,7 @@ public class Extinguisher : MonoBehaviour
         isBeingGrabbed = UxrGrabManager.Instance.IsBeingGrabbed(_grabbableObject);
 
         //_particleSystem.Play();
-        print("particle started");
+        //print("particle started");
     }
 
     private void Update()

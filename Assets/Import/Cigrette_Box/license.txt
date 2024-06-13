@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cigrette Box
+* source:	https://sketchfab.com/3d-models/cigrette-box-a15e1bd346f8422486efa8215661e0a8
+* author:	mayur malviya (https://sketchfab.com/phelvanmunna)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cigrette Box" (https://sketchfab.com/3d-models/cigrette-box-a15e1bd346f8422486efa8215661e0a8) by mayur malviya (https://sketchfab.com/phelvanmunna) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

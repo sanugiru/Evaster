@@ -96,6 +96,7 @@ public class IgniteAreaController : MonoBehaviour {
     }
 
     public void OnIgniteCheck() {
+        Debug.Log("onignitecheck");
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, igniteRadious);
         foreach (var hitCollider in hitColliders) {
             CheckBurnableCollider(hitCollider);

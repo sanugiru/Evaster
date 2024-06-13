@@ -15,8 +15,8 @@ public class ParticleCollider : MonoBehaviour
     {
         //if (other.CompareTag("OnFire"))
         //{
-            //Debug.Log("Particle Hit!");
-            //burnableObject.Extinguish();
+        //Debug.Log("Particle Hit!");
+        burnableObject.Extinguish();
         //}
 
         //seconds = other.GetComponent<BurnableObject>();
