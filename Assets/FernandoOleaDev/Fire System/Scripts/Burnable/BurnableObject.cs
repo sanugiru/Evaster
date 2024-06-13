@@ -199,6 +199,7 @@ namespace FernandoOleaDev.FyreSystem {
                 return;
             }
             igniteGameobject = new GameObject("igniteGameobject");
+
             igniteGameobject.transform.parent = transform;
             igniteGameobject.transform.position = ignitePosition;
             if (generateLight) {
@@ -206,14 +207,14 @@ namespace FernandoOleaDev.FyreSystem {
             }
             burning = true;
             Debug.Log("sebelum 208");
-           // igniteAreaController.OnIgniteCheck();
-            Debug.Log("setelah 208");
+            //igniteAreaController.OnIgniteCheck();
+            //Debug.Log("setelah 208");
             OnBurnableIgnited.Invoke();
         }
 
         public void FirstIgnition()
         {
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             Ignite(transform.position);
             Debug.Log(transform.position);
         }
@@ -221,7 +222,7 @@ namespace FernandoOleaDev.FyreSystem {
         public void Extinguish()
         {
             if (combustionPercent > 1) return;
-            combustionPercent += 0.09f;
+            combustionPercent += 0.075f;
             Debug.Log(combustionPercent);
         }
 
@@ -369,6 +370,7 @@ namespace FernandoOleaDev.FyreSystem {
                 particleSystems = particleFireGameobject.GetComponentsInChildren<ParticleSystem>().ToList();
                 particleAudioSource = particleFireGameobject.GetComponent<AudioSource>();
                 particleSystems.ForEach(particleSystem => {
+                    
                     ParticleSystem.ShapeModule shapeModule = particleSystem.shape;
                     shapeModule.shapeType = ParticleSystemShapeType.MeshRenderer;
                     shapeModule.meshRenderer = meshRenderer;
@@ -389,6 +391,7 @@ namespace FernandoOleaDev.FyreSystem {
         private void ParticlesFireOn() {
             particleSystems.ForEach(particleSystem => {
                 particleSystem.Play();
+                Debug.Log("play");
             });
             //particleAudioSource.Play();
             particlesOn = true;
