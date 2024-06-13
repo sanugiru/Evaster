@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UltimateXR.Manipulation;
 using UltimateXR.Avatar;
-using UltimateXR.Core;
 using UltimateXR.Devices;
+using UltimateXR.Core;
 using UltimateXR.Haptics;
 
 public class Extinguisher1 : MonoBehaviour
@@ -12,9 +12,9 @@ public class Extinguisher1 : MonoBehaviour
     [SerializeField] ParticleSystem _particleSystem;
     [SerializeField] Collider _collider;
     private UxrGrabbableObject _grabbableObject;
-    public bool colliderEnabled = true;
+    public bool colliderEnabled = false;
     private bool isBeingGrabbed = false;
-    public bool isPressed  = false;
+    public bool isPressed = false;
 
     private void Awake()
     {
@@ -38,48 +38,43 @@ public class Extinguisher1 : MonoBehaviour
 
     private void Update()
     {
+        // Check if the object is being grabbed
         isBeingGrabbed = UxrGrabManager.Instance.IsBeingGrabbed(_grabbableObject);
+
         if (isBeingGrabbed)
         {
+            // Handle input when the object is grabbed
             if (UxrGrabManager.Instance.GetGrabbingHand(_grabbableObject, 0, out UxrGrabber grabber))
             {
                 if (UxrAvatar.LocalAvatarInput.GetButtonsPressDown(grabber.Side, UxrInputButtons.Trigger))
                 {
                     isPressed = true;
                     _particleSystem.Play();
-                    Debug.Log("Trigger pressed, particle system started");
+                    _collider.enabled = true;
+                    if (_collider.enabled && _particleSystem.isPlaying)
+                    {
+                        Debug.Log("Trigger pressed, particle system started, collider enabled");
+                    }
                 }
-
-                // if (isPressed)
-                // {
-                //     UxrAvatar.LocalAvatar.ControllerInput.SendGrabbableHapticFeedback(_grabbableObject, UxrHapticClipType.RumbleFreqNormal);
-                //     _collider.enabled = true;
-                //     if (_collider.enabled)
-                //         Debug.Log("Collider enabled");
-                //     else
-                //         Debug.Log("Collider not enabled");
-                // }
 
                 if (UxrAvatar.LocalAvatarInput.GetButtonsPressUp(grabber.Side, UxrInputButtons.Trigger))
                 {
                     isPressed = false;
                     _particleSystem.Stop();
-                    Debug.Log("Trigger released, particle system stopped");
+                    _collider.enabled = false;
+                    if (!_collider.enabled && !_particleSystem.isPlaying)
+                    {
+                        Debug.Log("Trigger released, particle system stopped, collider disabled");
+                    }
                 }
             }
         }
-        if (isPressed)
+        else if (_collider.enabled || _particleSystem.isPlaying)
         {
-            UxrAvatar.LocalAvatar.ControllerInput.SendGrabbableHapticFeedback(_grabbableObject, UxrHapticClipType.RumbleFreqNormal);
-            _collider.enabled = true;
-            if (_collider.enabled)
-                Debug.Log("Collider enabled");
-            else
-                Debug.Log("Collider not enabled");
-        }
-        else
-        {
+            // Ensure the collider and particle system are disabled when the object is not grabbed
+            _particleSystem.Stop();
             _collider.enabled = false;
+            Debug.Log("Extinguisher not grabbed, particle system stopped, collider disabled");
         }
     }
 }

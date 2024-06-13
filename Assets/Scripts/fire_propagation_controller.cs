@@ -8,7 +8,10 @@ public class fire_propagation_controller : MonoBehaviour
     public GameObject burnableObject;
     [SerializeField] BurnableObject burnableObjectScript;
     public Collider colliderObject;
-    public Collider colliderExtinguisher;
+    public Collider colliderExtinguisherWater;
+    public Collider colliderExtinguisherFoam;
+    public Collider colliderExtinguisherCO2;
+    public Collider colliderExtinguisherPowder;
     public float extinguishPercentage = 0.1f;
     public float extinguishTime = 10f;
     public bool isExtinguishing = false;
@@ -25,29 +28,61 @@ public class fire_propagation_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isExtinguished && extinguishPercentage < 1f && colliderObject && colliderExtinguisher && colliderObject.bounds.Intersects(colliderExtinguisher.bounds))
+        if (!isExtinguished && extinguishPercentage < 1f && colliderObject && colliderExtinguisherWater && colliderObject.bounds.Intersects(colliderExtinguisherWater.bounds))
         {
-            isExtinguishing = true;
-
-            float increment = Time.deltaTime / extinguishTime;
-            extinguishPercentage = Mathf.Clamp01(extinguishPercentage + increment);
-
-            if (extinguishPercentage == 1f)
-            {
-                isExtinguished = true;
-                isExtinguishing = false;
-                burnableObjectScript.flamePropagationSeconds = 0.2f;
-                burnableObjectScript.combustionSeconds = 0.2f;
-                burnableObjectScript.generateLight = false;
-            }
+            Extinguish();
         }
-        else if (!isExtinguished && !isExtinguishing && extinguishPercentage > 0f && colliderObject && colliderExtinguisher && !colliderObject.bounds.Intersects(colliderExtinguisher.bounds))
+        else if (!isExtinguished && extinguishPercentage < 1f && colliderObject && colliderExtinguisherFoam && colliderObject.bounds.Intersects(colliderExtinguisherFoam.bounds))
         {
-            float decrement = Time.deltaTime / extinguishTime;
-            extinguishPercentage = Mathf.Clamp01(extinguishPercentage - decrement);
+            Extinguish();
         }
+        else if (!isExtinguished && extinguishPercentage < 1f && colliderObject && colliderExtinguisherCO2 && colliderObject.bounds.Intersects(colliderExtinguisherCO2.bounds))
+        {
+            Extinguish();
+        }
+        else if (!isExtinguished && extinguishPercentage < 1f && colliderObject && colliderExtinguisherPowder && colliderObject.bounds.Intersects(colliderExtinguisherPowder.bounds))
+        {
+            Extinguish();
+        }
+        else if (!isExtinguished && !isExtinguishing && extinguishPercentage > 0f && colliderObject && colliderExtinguisherWater && !colliderObject.bounds.Intersects(colliderExtinguisherWater.bounds))
+        {
+            ExtinguishPercentage();
+        }
+        else if (!isExtinguished && !isExtinguishing && extinguishPercentage > 0f && colliderObject && colliderExtinguisherFoam && !colliderObject.bounds.Intersects(colliderExtinguisherFoam.bounds))
+        {
+            ExtinguishPercentage();
+        }
+        else if (!isExtinguished && !isExtinguishing && extinguishPercentage > 0f && colliderObject && colliderExtinguisherCO2 && !colliderObject.bounds.Intersects(colliderExtinguisherCO2.bounds))
+        {
+            ExtinguishPercentage();
+        }
+        else if (!isExtinguished && !isExtinguishing && extinguishPercentage > 0f && colliderObject && colliderExtinguisherPowder && !colliderObject.bounds.Intersects(colliderExtinguisherPowder.bounds))
+        {
+            ExtinguishPercentage();
+        }
+        
         
     }
 
-    
+    void Extinguish()
+    {
+        isExtinguishing = true;
+
+        float increment = Time.deltaTime / extinguishTime;
+        extinguishPercentage = Mathf.Clamp01(extinguishPercentage + increment);
+        if (extinguishPercentage == 1f)
+        {
+            isExtinguished = true;
+            isExtinguishing = false;
+            burnableObjectScript.flamePropagationSeconds = 0.2f;
+            burnableObjectScript.combustionSeconds = 0.2f;
+            burnableObjectScript.generateLight = false;
+        }
+    }
+
+    void ExtinguishPercentage()
+    {
+        float decrement = Time.deltaTime / extinguishTime;
+        extinguishPercentage = Mathf.Clamp01(extinguishPercentage - decrement);
+    }
 }
