@@ -1150,10 +1150,15 @@ PrefabInstance:
       propertyPath: playerRightHandCollider
       value: 
       objectReference: {fileID: 860377313}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6871183754231860678, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 157225497}
   m_SourcePrefab: {fileID: 100100000, guid: afb96a340d714a04da42d16fd5324fe2, type: 3}
 --- !u!4 &157225494 stripped
 Transform:
@@ -1161,6 +1166,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 157225493}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &157225495 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7599187332277139693, guid: afb96a340d714a04da42d16fd5324fe2,
+    type: 3}
+  m_PrefabInstance: {fileID: 157225493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157225496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6871183754231860678, guid: afb96a340d714a04da42d16fd5324fe2,
+    type: 3}
+  m_PrefabInstance: {fileID: 157225493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &157225497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157225496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebd3be898b0e944692a5e78f99ff748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonCollider: {fileID: 157225495}
+  playerRightHandCollider: {fileID: 860377313}
+  playerLeftHandCollider: {fileID: 915308963}
+  targetObject: {fileID: 1962050576}
+  teleportDestination: {fileID: 1312664252}
 --- !u!114 &164411509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13632,9 +13666,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860865433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe640ab1390ea5647b389040e0f6833b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ebd3be898b0e944692a5e78f99ff748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonCollider: {fileID: 1860865436}
+  playerRightHandCollider: {fileID: 860377313}
+  playerLeftHandCollider: {fileID: 915308963}
+  targetObject: {fileID: 1962050576}
+  teleportDestination: {fileID: 1312664252}
 --- !u!65 &1860865436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14090,7 +14129,7 @@ PrefabInstance:
     - target: {fileID: 3230740301638696396, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5598095594200765925, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
@@ -15345,7 +15384,7 @@ PrefabInstance:
     - target: {fileID: 8027605771548313532, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -15391,7 +15430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962050576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2b87341763ed1447b56652023d58f90, type: 3}
   m_Name: 
@@ -17277,11 +17316,45 @@ PrefabInstance:
       propertyPath: playerRightHandCollider
       value: 
       objectReference: {fileID: 860377313}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8938824863332151366, guid: afb96a340d714a04da42d16fd5324fe2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6871183754231860678, guid: afb96a340d714a04da42d16fd5324fe2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7522451551904523258}
   m_SourcePrefab: {fileID: 100100000, guid: afb96a340d714a04da42d16fd5324fe2, type: 3}
+--- !u!65 &7522451551904523256 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7599187332277139693, guid: afb96a340d714a04da42d16fd5324fe2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522451551904523255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7522451551904523257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6871183754231860678, guid: afb96a340d714a04da42d16fd5324fe2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522451551904523255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7522451551904523258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7522451551904523257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebd3be898b0e944692a5e78f99ff748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonCollider: {fileID: 7522451551904523256}
+  playerRightHandCollider: {fileID: 860377313}
+  playerLeftHandCollider: {fileID: 915308963}
+  targetObject: {fileID: 1962050576}
+  teleportDestination: {fileID: 1312664252}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
