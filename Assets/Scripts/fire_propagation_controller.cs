@@ -60,8 +60,6 @@ public class fire_propagation_controller : MonoBehaviour
         {
             ExtinguishPercentage();
         }
-        
-        
     }
 
     void Extinguish()
@@ -74,13 +72,7 @@ public class fire_propagation_controller : MonoBehaviour
         {
             isExtinguished = true;
             isExtinguishing = false;
-            burnableObjectScript.flamePropagationSeconds = 0.0f;
-            burnableObjectScript.combustionSeconds = 0.0f;
-            burnableObjectScript.generateLight = false;
-            // if (burnableObjectScript.flamePropagationSeconds == 0.2f && burnableObjectScript.combustionSeconds == 0.2f && !burnableObjectScript.generateLight)
-            // {
-            //     Debug.Log("Fire extinguished");
-            // }
+            Destroy(burnableObject);
         }
     }
 
