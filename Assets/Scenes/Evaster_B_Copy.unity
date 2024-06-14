@@ -12577,8 +12577,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609659322}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.35788, y: 15.393465, z: 3.0998778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.547737, y: -0.6393528, z: -1.8949757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12586,7 +12586,7 @@ Transform:
   - {fileID: 589107731}
   - {fileID: 1712890643}
   - {fileID: 1491367209}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1857456778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1614882361
 MonoBehaviour:
@@ -13585,6 +13585,7 @@ Transform:
   - {fileID: 320181047}
   - {fileID: 1578496051}
   - {fileID: 1357607031}
+  - {fileID: 1609659323}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860865433
@@ -16649,6 +16650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6228177669429067822, guid: bd1fb3c59dcc1f6439eb35553658793b,
         type: 3}
+      propertyPath: extinguishTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228177669429067822, guid: bd1fb3c59dcc1f6439eb35553658793b,
+        type: 3}
       propertyPath: colliderExtinguisher
       value: 
       objectReference: {fileID: 4517550636451052954}
@@ -17284,7 +17290,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1857456778}
   - {fileID: 461410006}
-  - {fileID: 1609659323}
   - {fileID: 1920597770}
   - {fileID: 246896494}
   - {fileID: 1312664252}

@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1 Start Scene.unity
     guid: f42d7574de690764dba76cca9196bd0b
+  - enabled: 1
+    path: Assets/Scenes/Evaster_Start.unity
+    guid: fc3c231a58808b847b1d999226eabf35
   - enabled: 1
     path: Assets/Scenes/Evaster_A.unity
     guid: 674ff1442e8dc654aa75c2439693a5c8
