@@ -393,7 +393,7 @@ namespace FernandoOleaDev.FyreSystem {
                 particleSystem.Play();
                 Debug.Log("play");
             });
-            //particleAudioSource.Play();
+            particleAudioSource.Play();
             particlesOn = true;
         }
         
