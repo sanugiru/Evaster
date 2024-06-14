@@ -11,8 +11,8 @@ public class GameStartMenu : MonoBehaviour
     public GameObject about;
 
     [Header("Main Menu Buttons")]
-    public Button startButton;
-    //public Button optionButton;
+    public Button gudangButton;
+    public Button kantorButton;
     public Button aboutButton;
     public Button quitButton;
 
@@ -24,7 +24,8 @@ public class GameStartMenu : MonoBehaviour
         EnableMainMenu();
 
         //Hook events
-        startButton.onClick.AddListener(StartGame);
+        gudangButton.onClick.AddListener(StartAGame);
+        kantorButton.onClick.AddListener(StartBGame);
         //optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
         quitButton.onClick.AddListener(QuitGame);
@@ -40,11 +41,16 @@ public class GameStartMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartGame()
+    public void StartAGame()
     {
         HideAll();
-        int i = Random.Range(1, 2);
-        SceneTransitionManager.singleton.GoToSceneAsync(i);
+        SceneTransitionManager.singleton.GoToSceneAsync(1);
+    }
+
+    public void StartBGame()
+    {
+        HideAll();
+        SceneTransitionManager.singleton.GoToSceneAsync(2);
     }
 
     public void HideAll()
