@@ -6,24 +6,22 @@ using UnityEngine;
 public class Collider_B : MonoBehaviour
 {
     private BurnableObject burnableObject;
-    [SerializeField] private GameObject random;
-    private int type;
-    // Start is called before the first frame update
+    //[SerializeField] private BurnableObject fireSource;
+    //[SerializeField] private GameObject random;
+    //private int type;
+    
     void Start()
     {
         burnableObject = GetComponent<BurnableObject>();
-        type = random.GetComponent<RandomizeOnStart>().type;
-        
-        Debug.Log(type);
+        //fireSource = GetComponent<BurnableObject>();
+        //type = random.GetComponent<RandomizeOnStart>().type;
     }
 
-    // Update is called once per frame
     private void OnParticleCollision(GameObject other)
     {
-        if (type != 1) return;
         if (other.CompareTag("TypeA"))
         {
-            if (!burnableObject.IsBurning()) burnableObject.FirstIgnition();
+            //if (!burnableObject.IsBurning() && fireSource.IsBurning()) burnableObject.FirstIgnition();
             //Debug.Log("typea");
             //Debug.Log("particlehit");
             return;

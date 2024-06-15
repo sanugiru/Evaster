@@ -15,12 +15,9 @@ public class Collider_A : MonoBehaviour
     // Update is called once per frame
     private void OnParticleCollision(GameObject other)
     {
-        //if (other.CompareTag("TypeA")) 
-        //{
-        //    Debug.Log("typeA");
-        //    Debug.Log("particlehit");
-            burnableObject.Extinguish(); 
-        //}
-           
+        /*
+         type a fire can be put out using every type of extinguisher, no need for if-statement
+         */
+        burnableObject.Extinguish();  
     }
 }

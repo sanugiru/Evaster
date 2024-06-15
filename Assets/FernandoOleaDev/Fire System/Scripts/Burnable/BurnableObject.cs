@@ -226,6 +226,12 @@ namespace FernandoOleaDev.FyreSystem {
             Debug.Log(combustionPercent);
         }
 
+        //public void IgniteOtherBurnables()
+        //{
+        //    if (igniteRadious == 1f) return;
+        //    igniteRadious += 0.5f;
+        //}
+
         private void SetIgnitePosition() {
             material.SetVector("_IgnitePosition", igniteGameobject.transform.position);
         }

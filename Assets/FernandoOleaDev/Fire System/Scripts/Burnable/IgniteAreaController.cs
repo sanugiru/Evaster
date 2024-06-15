@@ -43,8 +43,8 @@ public class IgniteAreaController : MonoBehaviour {
         elapsedSecondsToIgnite += Time.deltaTime;
         toIgnitePercent = elapsedSecondsToIgnite / secondsToIgnite;
         if (toIgnitePercent >= 1){
-            RaycastHit hit;
-            Vector3 direction;
+            //RaycastHit hit;
+            //Vector3 direction;
             if (otherBurnable != null) {
                 //direction = thisBurnableObject.transform.position - otherBurnable.transform.position;
                 //if (Physics.Raycast(thisBurnableObject.transform.position, direction, out hit)) {
