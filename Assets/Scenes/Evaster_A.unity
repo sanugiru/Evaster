@@ -4098,7 +4098,7 @@ MonoBehaviour:
   OnBurnableBurnedUp:
     m_PersistentCalls:
       m_Calls: []
-  igniteAtStart: 0
+  igniteAtStart: 1
   infiniteCombustion: 1
   flamePropagationSeconds: 10
   propagationSmooth: 5
@@ -11719,7 +11719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469768294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d322bd09d9527a4f9e42101c153b89c, type: 3}
   m_Name: 
@@ -12624,7 +12624,7 @@ PrefabInstance:
     - target: {fileID: 3807664744355113946, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
       propertyPath: m_TagString
-      value: TypeD
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4183498689125936098, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
@@ -12683,8 +12683,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
+        type: 3}
       propertyPath: m_TagString
-      value: TypeD
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18017,7 +18022,7 @@ PrefabInstance:
     - target: {fileID: 234718554940534464, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
       propertyPath: m_TagString
-      value: TypeA
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 853699224026643538, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
@@ -18088,6 +18093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireExtinguisher_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
@@ -18529,7 +18539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792492394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2b87341763ed1447b56652023d58f90, type: 3}
   m_Name: 
@@ -18537,7 +18547,7 @@ MonoBehaviour:
   _parentToDestination: 0
   _metersPerSecondNormal: 2
   _metersPerSecondSprint: 4
-  _walkDirection: 0
+  _walkDirection: 2
   _rotationDegreesPerSecondNormal: 120
   _rotationDegreesPerSecondSprint: 120
   _gravity: 0
@@ -23459,7 +23469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1012794137
 Transform:
   m_ObjectHideFlags: 0
@@ -25425,7 +25435,7 @@ PrefabInstance:
     - target: {fileID: 2034010182312906783, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
       propertyPath: m_TagString
-      value: TypeC
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5178609668087446571, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
@@ -25477,10 +25487,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6949467346850039628, guid: f9d23611f72d07f48b245c9839b2bff6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
       propertyPath: m_Name
-      value: FireExtinguisher_C (1)
+      value: FireExtinguisher_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
@@ -28043,7 +28063,7 @@ PrefabInstance:
     - target: {fileID: 234718554940534464, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
       propertyPath: m_TagString
-      value: TypeA
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 853699224026643538, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
@@ -28100,6 +28120,11 @@ PrefabInstance:
       propertyPath: _particleSystem
       value: 
       objectReference: {fileID: 184664997}
+    - target: {fileID: 2639204928169715597, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+        type: 3}
+      propertyPath: _particleCollider
+      value: 
+      objectReference: {fileID: 1911206045}
     - target: {fileID: 3370728317913234735, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
@@ -28117,6 +28142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+        type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -28124,6 +28154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271096079916516998, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+        type: 3}
+      propertyPath: m_TagString
+      value: TypeA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30546,7 +30581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1312936479
 Transform:
   m_ObjectHideFlags: 0
@@ -30574,7 +30609,7 @@ PrefabInstance:
     - target: {fileID: 3230740301638696396, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5598095594200765925, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
@@ -30584,17 +30619,17 @@ PrefabInstance:
     - target: {fileID: 5862206761291005208, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.14
+      value: 22.89
       objectReference: {fileID: 0}
     - target: {fileID: 5862206761291005208, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.2197495
+      value: 9.632
       objectReference: {fileID: 0}
     - target: {fileID: 5862206761291005208, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.03
+      value: -7.41
       objectReference: {fileID: 0}
     - target: {fileID: 5862206761291005208, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
@@ -31834,7 +31869,7 @@ PrefabInstance:
     - target: {fileID: 8027605771548313532, guid: aa05267b70aeae94b88500889cccdb26,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -34428,7 +34463,12 @@ PrefabInstance:
     - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
       propertyPath: m_Name
-      value: FireExtinguisher_B (1)
+      value: FireExtinguisher_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
@@ -34438,7 +34478,12 @@ PrefabInstance:
     - target: {fileID: 8494573705735370356, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
       propertyPath: m_TagString
-      value: TypeB
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500782908381470194, guid: 41d21a304f78a72488d8389ef313ddec,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36295,6 +36340,11 @@ PrefabInstance:
     - target: {fileID: 3807664744355113946, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
       propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923410780523101944, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
+        type: 3}
+      propertyPath: m_TagString
       value: TypeD
       objectReference: {fileID: 0}
     - target: {fileID: 4183498689125936098, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
@@ -36354,8 +36404,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
+        type: 3}
       propertyPath: m_TagString
-      value: TypeD
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36774,7 +36829,7 @@ PrefabInstance:
     - target: {fileID: 234718554940534464, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
       propertyPath: m_TagString
-      value: TypeA
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 853699224026643538, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
@@ -36845,6 +36900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireExtinguisher_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5901211017960815510, guid: 798b087e67ca62a448a5cbc9b71f92eb,
         type: 3}
@@ -38195,7 +38255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1592934128
 Transform:
   m_ObjectHideFlags: 0
@@ -39795,7 +39855,7 @@ PrefabInstance:
     - target: {fileID: 7774744066528989781, guid: 044706d9cc6b24c44affa2d41d9dbed0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3138
+      value: 5.296
       objectReference: {fileID: 0}
     - target: {fileID: 7774744066528989781, guid: 044706d9cc6b24c44affa2d41d9dbed0,
         type: 3}
@@ -44619,6 +44679,10 @@ PrefabInstance:
       value: CarboardBox
       objectReference: {fileID: 0}
     - target: {fileID: 1192641458597302, guid: acbdb13218a23b644b2a15c0a6fbd3f7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192641458597302, guid: acbdb13218a23b644b2a15c0a6fbd3f7, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -44667,6 +44731,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c06e35554f74af949ad12bd006999e8c, type: 2}
+    - target: {fileID: 65569984092380234, guid: acbdb13218a23b644b2a15c0a6fbd3f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45049,6 +45118,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8504916364468091507, guid: a151c16dd44972946b4d2471a71259e0,
     type: 3}
   m_PrefabInstance: {fileID: 1908252939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1911206045 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 320210382970690536, guid: 798b087e67ca62a448a5cbc9b71f92eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1188396021}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1914004096 stripped
 Transform:
@@ -46943,7 +47018,7 @@ PrefabInstance:
     - target: {fileID: 3807664744355113946, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
       propertyPath: m_TagString
-      value: TypeD
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4183498689125936098, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
@@ -47002,8 +47077,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058195601355105228, guid: 19e892b908fa1d048ba5d40c5dbb9b49,
+        type: 3}
       propertyPath: m_TagString
-      value: TypeD
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50673,9 +50753,19 @@ PrefabInstance:
     - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
       propertyPath: m_Name
-      value: FireExtinguisher_B
+      value: FireExtinguisher_C
       objectReference: {fileID: 0}
     - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822374984053950269, guid: 41d21a304f78a72488d8389ef313ddec,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144458173084355827, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
       propertyPath: m_TagString
       value: TypeC
@@ -50683,7 +50773,12 @@ PrefabInstance:
     - target: {fileID: 8494573705735370356, guid: 41d21a304f78a72488d8389ef313ddec,
         type: 3}
       propertyPath: m_TagString
-      value: TypeB
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500782908381470194, guid: 41d21a304f78a72488d8389ef313ddec,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51756,10 +51851,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1739424799}
     m_Modifications:
+    - target: {fileID: 2026709685519334297, guid: f9d23611f72d07f48b245c9839b2bff6,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2034010182312906783, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
       propertyPath: m_TagString
-      value: TypeC
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5178609668087446571, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
@@ -51811,10 +51911,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6949467346850039628, guid: f9d23611f72d07f48b245c9839b2bff6,
+        type: 3}
+      propertyPath: m_TagString
+      value: TypeB
+      objectReference: {fileID: 0}
     - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}
       propertyPath: m_Name
-      value: FireExtinguisher_C
+      value: FireExtinguisher_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8025114457067384591, guid: f9d23611f72d07f48b245c9839b2bff6,
         type: 3}

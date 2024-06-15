@@ -12,6 +12,7 @@ using UltimateXR.Haptics;
 public class Extinguisher : MonoBehaviour
 {
     [SerializeField] ParticleSystem _particleSystem;
+    [SerializeField] ParticleSystem _particleCollider;
     private UxrGrabbableObject _grabbableObject;
     private bool isBeingGrabbed;
     private bool isPressed;
@@ -35,6 +36,7 @@ public class Extinguisher : MonoBehaviour
             {
                 isPressed = true;
                 _particleSystem.Play();
+                _particleCollider.Play();
 
                 // print("button pressed");
                 // _particleSystem.Emit(100);
@@ -50,8 +52,16 @@ public class Extinguisher : MonoBehaviour
             if (UxrAvatar.LocalAvatarInput.GetButtonsPressUp(grabber.Side, UxrInputButtons.Trigger))
             {
                 _particleSystem.Stop();
+                _particleCollider.Stop();
                 isPressed = false;
             }
+        }
+
+        else
+        {
+            _particleSystem.Stop();
+            _particleCollider.Stop();
+            isPressed = false;
         }
 
         //_particleSystem.Pause();

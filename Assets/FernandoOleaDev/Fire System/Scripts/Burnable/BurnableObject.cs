@@ -222,7 +222,7 @@ namespace FernandoOleaDev.FyreSystem {
         public void Extinguish()
         {
             if (combustionPercent > 1) return;
-            combustionPercent += 0.075f;
+            combustionPercent += 0.085f;
             Debug.Log(combustionPercent);
         }
 
