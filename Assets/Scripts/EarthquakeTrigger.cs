@@ -8,13 +8,22 @@ public class EarthquakeTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter called with: " + other.gameObject.name);
+
         if (other.CompareTag("Player"))
         {
+            Debug.Log("player entered the trigger");
+
             // Aktifkan gempa
             if (earthquakeScript != null)
             {
+                Debug.Log("Starting earthquake corouine");
                 StartCoroutine(earthquakeScript.StartEarthquake());
             }
+            else{
+                Debug.LogError("earthquakeScript is not assigned");
+            }
+                
         }
     }
 }
