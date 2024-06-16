@@ -11,8 +11,11 @@ public class GameStartMenu : MonoBehaviour
     public GameObject about;
 
     [Header("Main Menu Buttons")]
-    public Button gudangButton;
-    public Button kantorButton;
+    public Button storage1Button;
+    public Button storage2Button;
+    public Button storage3Button;
+    public Button storage4Button;
+    public Button officeButton;
     public Button aboutButton;
     public Button quitButton;
 
@@ -24,8 +27,11 @@ public class GameStartMenu : MonoBehaviour
         EnableMainMenu();
 
         //Hook events
-        gudangButton.onClick.AddListener(StartAGame);
-        kantorButton.onClick.AddListener(StartBGame);
+        storage1Button.onClick.AddListener(()=>StartGame(1));
+        storage2Button.onClick.AddListener(() => StartGame(2));
+        storage3Button.onClick.AddListener(() => StartGame(3));
+        storage4Button.onClick.AddListener(() => StartGame(4));
+        officeButton.onClick.AddListener(() => StartGame(5));
         //optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
         quitButton.onClick.AddListener(QuitGame);
@@ -41,17 +47,17 @@ public class GameStartMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartAGame()
+    public void StartGame(int index)
     {
         HideAll();
-        SceneTransitionManager.singleton.GoToSceneAsync(1);
+        SceneTransitionManager.singleton.GoToSceneAsync(index);
     }
 
-    public void StartBGame()
-    {
-        HideAll();
-        SceneTransitionManager.singleton.GoToSceneAsync(2);
-    }
+    //public void StartBGame()
+    //{
+    //    HideAll();
+    //    SceneTransitionManager.singleton.GoToSceneAsync(2);
+    //}
 
     public void HideAll()
     {
