@@ -16,8 +16,12 @@ public class GameStartMenu : MonoBehaviour
     public Button storage3Button;
     public Button storage4Button;
     public Button officeButton;
+    public Button earthquakeLow;
+    public Button earthquakeMedium;
+    public Button earthquakeHigh;
     public Button aboutButton;
     public Button quitButton;
+    
 
     public List<Button> returnButtons;
 
@@ -32,6 +36,9 @@ public class GameStartMenu : MonoBehaviour
         storage3Button.onClick.AddListener(() => StartGame(3));
         storage4Button.onClick.AddListener(() => StartGame(4));
         officeButton.onClick.AddListener(() => StartGame(5));
+        earthquakeLow.onClick.AddListener(()=>StartGame(6));
+        earthquakeMedium.onClick.AddListener(()=>StartGame(7));
+        earthquakeHigh.onClick.AddListener(()=>StartGame(8));
         //optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
         quitButton.onClick.AddListener(QuitGame);

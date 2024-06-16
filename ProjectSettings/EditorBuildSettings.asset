@@ -26,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Evaster_B_Copy.unity
     guid: 6c78f852c6c76c44b950b7cc76a4379a
+  - enabled: 1
+    path: Assets/Scenes/Evaster_Earthquake_Low.unity
+    guid: 4486c7fd3a1fae04c92d1afacc1fbbad
+  - enabled: 1
+    path: Assets/Scenes/Evaster_Earthquake_Medium.unity
+    guid: ecb2c2ed54b6eff44a255080e8c3a773
+  - enabled: 1
+    path: Assets/Scenes/Evaster_Earthquake_High.unity
+    guid: e17800d672870a44c9afcf98d13136c0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b869f5586b4caec4196af0203ec5b142,
       type: 2}
