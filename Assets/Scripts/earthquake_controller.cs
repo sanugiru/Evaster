@@ -9,7 +9,6 @@ public class earthquake_controller : MonoBehaviour
     [SerializeField] float rotationAngle = 1.0f;  // Maximum rotation angle in degrees
 
     private Vector3 initialRotation;
-    private int direction;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,6 @@ public class earthquake_controller : MonoBehaviour
         if (targetObject != null)
         {
             initialRotation = targetObject.transform.eulerAngles;
-            direction = Random.value > 0.5f ? 1 : -1;
         }
     }
 
@@ -26,7 +24,7 @@ public class earthquake_controller : MonoBehaviour
     {
         if (targetObject != null)
         {
-            float angle = Mathf.Sin(Time.time * rotationSpeed) * rotationAngle * direction;
+            float angle = Mathf.Sin(Time.time * rotationSpeed) * rotationAngle;
             targetObject.transform.eulerAngles = new Vector3(initialRotation.x + angle, initialRotation.y, initialRotation.z);
         }
     }
